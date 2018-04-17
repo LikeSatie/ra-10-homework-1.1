@@ -6,6 +6,6 @@
   "author": "serp-ya <sergei.kundryukov1989@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "browser-sync start -s -f \"*\""
+    "start": "browser-sync start -s -f \".\""
   }
 }
