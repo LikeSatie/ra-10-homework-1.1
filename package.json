@@ -1,0 +1,11 @@
+{
+  "name": "jsx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/serp-ya/ra-10-homework-1.1.git",
+  "author": "serp-ya <sergei.kundryukov1989@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start -s -f \"*\""
+  }
+}
