@@ -21,9 +21,9 @@ class CalendarCore {
   }
 
   monthDaysCount(monthCursor = 0) {
-    return 33 - new Date(this.currentYear, this.currentMonth + monthCursor, 33).getDate();
+    return new Date(this.currentYear, (this.currentMonth + monthCursor + 1), 0).getDate();
   }
-
+  
   get firstDateWeekDayOfCurrentMonth() {
     return new Date(this.currentYear, this.currentMonth, 1).getDay();
   }
