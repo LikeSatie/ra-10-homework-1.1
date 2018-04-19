@@ -45,14 +45,14 @@ const makeCalendarMatrix = (calendarCore) => {
     if (firstDayOfCurrentMonth === 0) {
       needDaysFromPrevMonth = 6;
     } else {
-      needDaysFromPrevMonth = calendarCore.firstDateWeekDayOfCurrentMonth - 1;
+      needDaysFromPrevMonth = firstDayOfCurrentMonth - 1;
     }
   }
 
 
   const needRows = Math.ceil((monthDaysCount + needDaysFromPrevMonth) / 7);
 
-  for (let i = 0; i < needRows; i++) {
+  for (let weekNum = 0; weekNum < needRows; weekNum++) {
     const week = [];
 
 
@@ -60,7 +60,7 @@ const makeCalendarMatrix = (calendarCore) => {
       let day;
 
       // 1 неделя
-      if (!i) {
+      if (weekNum === 0) {
         if (!needDaysFromPrevMonth) {
           day = dayNum;
 
@@ -71,7 +71,7 @@ const makeCalendarMatrix = (calendarCore) => {
 
       // Остальные недели
       } else {
-        const difference = i * 7 + dayNum - needDaysFromPrevMonth;
+        const difference = weekNum * 7 + dayNum - needDaysFromPrevMonth;
         day = difference > monthDaysCount ? difference - monthDaysCount : difference;
       }
 
